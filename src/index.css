@@ -100,7 +100,7 @@ p {
 
 /* Color Selection Styles */
 
-.color-row {
+#color-row {
   display: flex;
   justify-content: center;
 }
@@ -127,22 +127,3 @@ p {
   border: 1px solid rgb(49, 49, 49);
 }
 
-.purple {
-  background: #CE97FB;
-}
-
-.red {
-  background: #FAA99D;
-}
-
-.green{
-  background: #CCE29C;
-}
-
-.blue {
-  background: #67EBFA;
-}
-
-.yellow {
-  background: #FDDF7E;
-}

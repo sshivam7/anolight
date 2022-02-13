@@ -18,6 +18,8 @@
 .env.test.local
 .env.production.local
 .prettierrc
+.eslintrc.json
+.env
 
 npm-debug.log*
 yarn-debug.log*
