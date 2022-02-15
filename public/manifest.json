@@ -2,23 +2,23 @@
   "manifest_version": 2,
   "name": "Anolight",
   "version": "1.0",
-  "description": "Adds drawing and highlighting functionality to webpages",
+  "description": "Adds highlighting functionality to webpages",
   "icons": {
-    "48": "marker-48.png"
+    "48": "./icons/marker-48.png"
   },
   "browser_action": {
-    "default_icon": "marker-48.png",
+    "default_icon": "./icons/marker-48.png",
     "default_title": "Anolight Options",
     "default_popup": "index.html"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["./scripts/content.js"]
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["./scripts/background.js"]
   },
-  "permissions": ["tabs", "activeTab", "storage", "contextMenus"]
+  "permissions": ["activeTab", "storage", "contextMenus"]
 }

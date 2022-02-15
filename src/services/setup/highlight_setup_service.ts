@@ -10,6 +10,11 @@ function setupHighlighting() {
   // Load value from local storage
   browser.storage.local.get().then((store) => {
     highlightStatus = store.highlight_status || false;
+
+    sendMessage({
+      action: 'TOGGLE_HIGHLIGHT',
+      data: { highlightStatus: highlightStatus },
+    });
     toggleHighlightBtn.checked = highlightStatus;
   });
 

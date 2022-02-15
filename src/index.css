@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --main-color: #ff1c55ff;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -54,11 +59,11 @@ code {
 }
 
 input:checked + .slider {
-  background-color: #ff1c55ff;
+  background-color: var(--main-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #ff1c55ff;
+  box-shadow: 0 0 1px var(--main-color);
 }
 
 input:checked + .slider:before {

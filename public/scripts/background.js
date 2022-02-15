@@ -1,7 +1,3 @@
-browser.runtime.onStartup.addListener(function () {
-  browser.storage.local.clear();
-});
-
 browser.contextMenus.create({
   id: 'highlight-selection',
   title: 'Highlight',

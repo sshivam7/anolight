@@ -1,3 +1,7 @@
+/* eslint-disable indent */
+let color = 'FAA99D';
+const HIGHLIGHT_KEY = 'NPKryv4iXxihMRg2gxRkTfFhwXmNmX9F';
+
 browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   switch (request.action) {
     case 'TOGGLE_HIGHLIGHT':
@@ -23,11 +27,9 @@ browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 });
 
-let color = 'FAA99D';
-const HIGHLIGHT_KEY = 'NPKryv4iXxihMRg2gxRkTfFhwXmNmX9F';
-
+/* Get selected text */
 function getSelectedText() {
-  var text = '';
+  let text = '';
   if (typeof window.getSelection != 'undefined') {
     text = window.getSelection().toString();
   } else if (
@@ -39,40 +41,50 @@ function getSelectedText() {
   return text;
 }
 
+/* Highlight given selection */
 function highlightText() {
-  var selectedText = getSelectedText();
-  if (selectedText) {
-    highlight();
+  let parent = getHighlightedMark();
+
+  if (parent.className != HIGHLIGHT_KEY) {
+    let selectedText = getSelectedText();
+    if (selectedText) {
+      highlight();
+    }
   }
 }
 
+/* Insert mark around selected text */
 function highlight() {
-  var mark = document.createElement('mark');
+  let mark = document.createElement('mark');
   mark.setAttribute('style', `background-color: #${color}`);
   mark.className = HIGHLIGHT_KEY;
   let sel = window.getSelection();
   if (sel.rangeCount) {
-    var range = sel.getRangeAt(0).cloneRange();
+    let range = sel.getRangeAt(0).cloneRange();
     range.surroundContents(mark);
     sel.removeAllRanges();
     sel.addRange(range);
   }
 }
 
+/* Remove highlight for given selected text */
 function removeHighlight() {
-  var highlightedSelection = getHighlightedMark();
+  let highlightedSelection = getHighlightedMark();
 
   if (highlightedSelection.className === HIGHLIGHT_KEY) {
-    var parent = highlightedSelection.parentNode;
-    var text = document.createTextNode(highlightedSelection.innerHTML);
-  
+    let parent = highlightedSelection.parentNode;
+    let text = document.createTextNode(highlightedSelection.innerHTML);
+
     parent.insertBefore(text, highlightedSelection);
     highlightedSelection.remove();
   }
 }
 
+/* Get parent element from selected text 
+ * @returns parent element of selected text 
+ */
 function getHighlightedMark() {
-  var parent = null,
+  let parent = null,
     sel;
   if (window.getSelection) {
     sel = window.getSelection();
