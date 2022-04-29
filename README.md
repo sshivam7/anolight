@@ -8,8 +8,7 @@
 
 
 <p align="center">
-     <img src="https://img.shields.io/amo/users/anolight?color=%23ff1c55ff&style=for-the-badge">
-     <img src="https://img.shields.io/amo/rating/anolight?color=%23ff1c55ff&style=for-the-badge">
+     <img src="https://img.shields.io/badge/Author-Shivam-ff1c55?style=for-the-badge">
      <img src="https://img.shields.io/amo/v/anolight?color=%23ff1c55ff&label=Version&style=for-the-badge">
      <img src="https://img.shields.io/github/license/sshivam7/anolight?color=%23ff1c55ff&style=for-the-badge">
 </p>
